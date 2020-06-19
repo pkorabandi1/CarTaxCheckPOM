@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class QueryPage {
 	
 	@FindBy(id = "vrm-input")
-	public WebElement txtRegNo;
+	private WebElement txtRegNo;
 	
 	@FindBy(xpath = "/html/body/div/div/div[1]/div/div/div/div/span/form/button")
-	public WebElement btnSubmit;
+	private WebElement btnSubmit;
 	
 	public QueryPage(WebDriver driver){
 		
@@ -19,4 +19,14 @@ public class QueryPage {
 		
 	}
 
+
+	public void setReg(String regNo) {
+		this.txtRegNo.sendKeys(regNo);;
+	}
+
+	public void submitClick() {
+		this.btnSubmit.click();
+	}
+
+	
 }

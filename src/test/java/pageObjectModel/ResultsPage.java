@@ -8,22 +8,22 @@ import org.openqa.selenium.support.PageFactory;
 public class ResultsPage {
 	
 	@FindBy(xpath = "//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[1]/dd")
-	public WebElement carreg;
+	private WebElement carreg;
 	
 	@FindBy(xpath = "//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[2]/dd")
-	public WebElement make;
+	private WebElement make;
 	
 	@FindBy(xpath = "//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[3]/dd")
-	public WebElement model;
+	private WebElement model;
 	
 	@FindBy(xpath = "//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[4]/dd")
-	public WebElement color;
+	private WebElement color;
 	
 	@FindBy(xpath = "//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[5]/dd")
-	public WebElement year;
+	private WebElement year;
 	
 	@FindBy (xpath = "/html/body/div/div/div/div[1]/div/div/dl/div/h5/span")
-	public WebElement popup;
+	private WebElement popup;
 	
 	public ResultsPage(WebDriver driver){
 		
@@ -31,6 +31,28 @@ public class ResultsPage {
 		
 	}
 	
+	public String getCarreg() {
+		return this.carreg.getText();
+	}
 
+	public String getMake() {
+		return this.make.getText();
+	}
+
+	public String getModel() {
+		return this.model.getText();
+	}
+
+	public String getColor() {
+		return this.color.getText();
+	}
+
+	public String getYear() {
+		return this.year.getText();
+	}
+
+	public void clickPopup() {
+		this.popup.click();;
+	}
 
 }
