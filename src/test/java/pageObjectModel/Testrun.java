@@ -13,8 +13,8 @@ public class Testrun {
 		
 		QueryPage querypage = new QueryPage(driver);
 		ResultsPage resultspage = new ResultsPage(driver);
-		querypage.txtRegNo.sendKeys("n2pkk");
-		querypage.btnSubmit.click();
+		querypage.setReg("n2pkk");
+		querypage.submitClick();
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
@@ -22,11 +22,11 @@ public class Testrun {
 			e.printStackTrace();
 		}
 		
-		System.out.println(resultspage.carreg.getText()+","+
-				resultspage.make.getText()+","+
-				resultspage.model.getText()+","+
-				resultspage.color.getText()+","+
-				resultspage.year.getText());		
+		System.out.println(resultspage.getCarreg()+","+
+				resultspage.getMake()+","+
+				resultspage.getModel()+","+
+				resultspage.getColor()+","+
+				resultspage.getYear());		
 		driver.quit();
 	}
 

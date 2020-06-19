@@ -39,8 +39,8 @@ public class ObtainData {
 			
 			driver.get("https://cartaxcheck.co.uk/");
 			
-			querypage.txtRegNo.sendKeys(regNo);
-			querypage.btnSubmit.click();
+			querypage.setReg(regNo);;
+			querypage.submitClick();
 			
 //			driver.findElement(By.id("vrm-input")).sendKeys(regNo); 
 //			
@@ -48,12 +48,12 @@ public class ObtainData {
 //
 
 			Thread.sleep(2000);
-			String carreg = resultspage.carreg.getText();
+			String carreg = resultspage.getCarreg();
 //        	
 //        	String carreg = driver.findElement(By.xpath("//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[1]/dd")).getText();
 //        	
         	if (carreg.equals("")) {
-        		resultspage.popup.click();
+        		resultspage.clickPopup();
 //        		driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div/dl/div/h5/span")).click();
         		
         		   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");  
@@ -66,10 +66,10 @@ public class ObtainData {
 	        		FileUtils.copyFile(file, new File(filename));
         	}
         	
-        	String make = resultspage.make.getText();
-        	String model = resultspage.model.getText();
-        	String color = resultspage.color.getText();
-        	String year = resultspage.year.getText();
+        	String make = resultspage.getMake();
+        	String model = resultspage.getModel();
+        	String color = resultspage.getColor();
+        	String year = resultspage.getYear();
         	
 //        	String make  = driver.findElement(By.xpath("//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[2]/dd")).getText();
 //        	String model = driver.findElement(By.xpath("//*[@id=\"m\"]/div/div[3]/div[1]/div/span/div[2]/dl[3]/dd")).getText();

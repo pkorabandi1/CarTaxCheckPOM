@@ -39,21 +39,21 @@ formatter.match({
   "location": "CarCheckStepDef.the_list_of_car_registration_numbers()"
 });
 formatter.result({
-  "duration": 265826200,
+  "duration": 248169500,
   "status": "passed"
 });
 formatter.match({
   "location": "CarCheckStepDef.registration_number_is_submitted()"
 });
 formatter.result({
-  "duration": 27282901900,
+  "duration": 27414793300,
   "status": "passed"
 });
 formatter.match({
   "location": "CarCheckStepDef.the_car_details_match_the_details_from_the_file()"
 });
 formatter.result({
-  "duration": 74973500,
+  "duration": 1649900,
   "status": "passed"
 });
 });
